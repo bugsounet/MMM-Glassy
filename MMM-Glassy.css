@@ -1,0 +1,30 @@
+/*
+ * Module: MMM-Glassy
+ */
+
+/* default value for config failed back */
+:root {
+ --Glassy-Padding: 5px;
+ --Glassy-Radius: 10px;
+ --Glassy-Background: rgba(0, 0, 0, 15%);
+ --Glassy-Blur: 5px;
+ --Glassy-Border-color: rgba(255, 255, 255, 10%);
+ --Glassy-Shadow: -5px -5px 8px black;
+ --gap-modules: 30px;
+ --gap-body-top: 60px;
+ --gap-body-right: 60px;
+ --gap-body-bottom: 60px;
+ --gap-body-left: 60px;
+}
+
+
+
+/* Glassy main css */
+.Glassy > *:not(.inactive):not(.hidden) {
+  padding: var(--Glassy-Padding);
+  border-radius: var(--Glassy-Radius);
+  box-shadow: var(--Glassy-Shadow);
+  background: var(--Glassy-Background);
+  backdrop-filter: blur(var(--Glassy-Blur));
+  border: 1px solid var(--Glassy-Border-color);
+}
