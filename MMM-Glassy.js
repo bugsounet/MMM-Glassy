@@ -111,7 +111,7 @@ Module.register("MMM-Glassy", {
   resume () {
     if (this.config.mirrorBackground && !this.config.mirrorBackgroundOnSuspend) {
       const MMBackground = document.getElementById("Background_MMM-Glassy");
-     MMBackground.className = "default";
+      MMBackground.className = "default";
     }
     Log.log("MMM-Glassy is resumed.");
   }
