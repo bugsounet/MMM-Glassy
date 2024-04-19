@@ -7,7 +7,7 @@
 Module.register("MMM-Glassy", {
   defaults: {
     debug: false,
-    ignoreModules: ["updatenotification"],
+    ignoreModules: [],
     modulePadding: "10px",
     moduleRadius: "10px",
     moduleShadow: "5px",

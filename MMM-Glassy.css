@@ -20,7 +20,7 @@
 
 
 /* Glassy main css */
-.Glassy > *:not(.inactive):not(.hidden) {
+.Glassy > *:not(:empty) {
   padding: var(--Glassy-Padding);
   border-radius: var(--Glassy-Radius);
   box-shadow: var(--Glassy-Shadow);
