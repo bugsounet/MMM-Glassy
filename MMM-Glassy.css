@@ -28,3 +28,17 @@
   backdrop-filter: blur(var(--Glassy-Blur));
   border: 1px solid var(--Glassy-Border-color);
 }
+
+/* MMBackground */
+#Background_MMM-Glassy {
+  width: 100%;
+  height: 100%;
+  opacity: 60%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+#Background_MMM-Glassy.hidden {
+  display: none;
+}

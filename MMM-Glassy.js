@@ -21,7 +21,10 @@ Module.register("MMM-Glassy", {
     moduleShadowColor: "black",
     moduleBlur: "5px",
     moduleSpacing: "15px",
-    mirrorMargin: "10px"
+    mirrorMargin: "10px",
+    mirrorBackground: true,
+    mirrorBackgroundFile: "default.png",
+    mirrorBackgroundOnSuspend: true
   },
 
   start () {
@@ -33,6 +36,7 @@ Module.register("MMM-Glassy", {
     switch(notification) {
       case "MODULE_DOM_CREATED":
         this.sendSocketNotification("INIT", this.config);
+        if (this.config.mirrorBackground) this.MMBackground();
         this.initialize();
         break;
     }
@@ -83,5 +87,33 @@ Module.register("MMM-Glassy", {
     Object.entries(CSS).forEach((value) => {
       cssRoot.style.setProperty(value[0], value[1]);
     });
+  },
+
+  MMBackground () {
+    const nodes = document.getElementsByClassName("region fullscreen below");
+    const pos = nodes[0];
+    const children = pos.children[0];
+    const module = document.createElement("div");
+    module.id = "Background_MMM-Glassy";
+    module.className = "default";
+    module.style.backgroundImage = `url(/modules/MMM-Glassy/resources/${this.config.mirrorBackgroundFile})`;
+    pos.insertBefore(module, children);
+  },
+
+  suspend () {
+    if (this.config.mirrorBackground && !this.config.mirrorBackgroundOnSuspend) {
+      const MMBackground = document.getElementById("Background_MMM-Glassy");
+      MMBackground.className = "hidden";
+    }
+    Log.log("MMM-Glassy is suspended.");
+  },
+
+  resume () {
+    if (this.config.mirrorBackground && !this.config.mirrorBackgroundOnSuspend) {
+      const MMBackground = document.getElementById("Background_MMM-Glassy");
+     MMBackground.className = "default";
+    }
+    Log.log("MMM-Glassy is resumed.");
   }
+
 });

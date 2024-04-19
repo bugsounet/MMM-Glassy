@@ -1,7 +1,7 @@
 {
   "name": "MMM-Glassy",
-  "version": "0.0.0",
-  "rev": "240416",
+  "version": "1.0.0",
+  "rev": "240419",
   "description": "Glassy Effect for MagicMirror²",
   "main": "MMM-Glassy.js",
   "repository": {
@@ -36,7 +36,7 @@
   },
   "devDependencies": {
     "@eslint/js": "^8.57.0",
-    "@stylistic/eslint-plugin": "^1.7.0",
+    "@stylistic/eslint-plugin": "^1.7.2",
     "eslint": "^8.57.0",
     "eslint-plugin-import": "^2.29.1"
   }
