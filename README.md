@@ -53,7 +53,7 @@ This example is the default configuration for customization
     moduleSpacing: "15px",
     mirrorMargin: "10px",
     mirrorBackground: true,
-    mirrorBackgroundFile: "default.png",
+    mirrorBackgroundFile: "default.jpg",
     mirrorBackgroundOnSuspend: true
   }
 },
@@ -79,7 +79,7 @@ This example is the default configuration for customization
 | moduleSpacing | STRING | "15px" | Spacing between 2 modules<br>Note: by default MagicMirror² have `30px` spacing |
 | mirrorMargin | STRING | "10px" | Change MagicMirror² screen margin.<br>Note: By default MagicMirror² have `60px` screen margin |
 | mirrorBackground | BOOLEAN | true | Allows you to use a background defined for MagicMirror². |
-| mirrorBackgroundFile | STRING | "default.png" | Filename of the background;<br>(must be in `resources` folder) |
+| mirrorBackgroundFile | STRING | "default.jpg" | Filename of the background;<br>(must be in `resources` folder) |
 | mirrorBackgroundOnSuspend | BOOLEAN | true | Display Background when `MMM-Glassy` is suspended. |
 
 ### Notes:
@@ -89,7 +89,8 @@ This example is the default configuration for customization
   * The smaller the percentage: more transparent it will be
 * MagicMirror² Background:
   * You can use your own file. just save it into `resources` folder of `MMM-Glassy` module
-  * Don't Forget in this case to use `mirrorBackgroundFile` feature
+  * Don't Forget in this case to use `mirrorBackgroundFile` feature.
+  * You have some others `default` background in `resources` Folder, just check it!
 * If you use another module for add a background to `MagicMirror²`:
   * Don't forget to set `mirrorBackground` to `false`
 * Resources Warn:

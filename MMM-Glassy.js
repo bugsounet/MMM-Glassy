@@ -5,6 +5,7 @@
 **************/
 
 Module.register("MMM-Glassy", {
+  requiresVersion: "2.27.0",
   defaults: {
     debug: false,
     ignoreModules: [],
@@ -23,7 +24,7 @@ Module.register("MMM-Glassy", {
     moduleSpacing: "15px",
     mirrorMargin: "10px",
     mirrorBackground: true,
-    mirrorBackgroundFile: "default.png",
+    mirrorBackgroundFile: "default.jpg",
     mirrorBackgroundOnSuspend: true
   },
 
