@@ -4,6 +4,8 @@ This module allows you to add a glass effect to MagicMirror² modules
 
 ## Screenshot
 
+![](https://github.com/bugsounet/MMM-Glassy/blob/dev/Screenshot.png?raw=true)
+
 ## Install
 **`MMM-Glassy` need `MagicMirror²` v2.27.0 and above**
 
