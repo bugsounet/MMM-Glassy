@@ -1,0 +1,44 @@
+/*
+ * Module: MMM-Glassy
+ */
+
+/* default value for config failed back */
+:root {
+ --Glassy-Padding: 5px;
+ --Glassy-Radius: 10px;
+ --Glassy-Background: rgba(0, 0, 0, 15%);
+ --Glassy-Blur: 5px;
+ --Glassy-Border-color: rgba(255, 255, 255, 10%);
+ --Glassy-Shadow: -5px -5px 8px black;
+ --gap-modules: 30px;
+ --gap-body-top: 60px;
+ --gap-body-right: 60px;
+ --gap-body-bottom: 60px;
+ --gap-body-left: 60px;
+}
+
+
+
+/* Glassy main css */
+.Glassy > *:not(:empty) {
+  padding: var(--Glassy-Padding) !important;
+  border-radius: var(--Glassy-Radius) !important;
+  box-shadow: var(--Glassy-Shadow) !important;
+  background: var(--Glassy-Background) !important;
+  backdrop-filter: blur(var(--Glassy-Blur)) !important;
+  border: 1px solid var(--Glassy-Border-color) !important;
+}
+
+/* MMBackground */
+#Background_MMM-Glassy {
+  width: 100%;
+  height: 100%;
+  opacity: 60%;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+#Background_MMM-Glassy.hidden {
+  display: none;
+}
