@@ -1,6 +1,6 @@
 # MMM-Glassy
 
-This module allows you to add a glass effect to MagicMirror² modules
+This module allows to add a glass effect to MagicMirror² modules
 
 ## Screenshot
 
