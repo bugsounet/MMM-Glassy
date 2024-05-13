@@ -32,7 +32,7 @@
   "homepage": "https://github.com/bugsounet/MMM-Glassy",
   "dependencies": {
     "esbuild": "^0.20.2",
-    "glob": "^10.3.12"
+    "glob": "^10.3.15"
   },
   "devDependencies": {
     "@eslint/js": "^8.57.0",
