@@ -1,7 +1,7 @@
 {
   "name": "MMM-Glassy",
-  "version": "1.0.1",
-  "rev": "240526",
+  "version": "1.1.0",
+  "rev": "240701",
   "description": "Glassy Effect for MagicMirror²",
   "main": "MMM-Glassy.js",
   "repository": {
