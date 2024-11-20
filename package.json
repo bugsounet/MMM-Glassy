@@ -38,6 +38,6 @@
     "@eslint/js": "^8.57.1",
     "@stylistic/eslint-plugin": "^1.8.1",
     "eslint": "^8.57.1",
-    "eslint-plugin-import": "^2.29.1"
+    "eslint-plugin-import": "^2.31.0"
   }
 }
