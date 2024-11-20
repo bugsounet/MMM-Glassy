@@ -29,12 +29,13 @@ Module.register("MMM-Glassy", {
   },
 
   start () {
+
     /* force to create a module position */
     this.data.position = "top_center";
   },
 
-  notificationReceived (notification, payload, sender) {
-    switch(notification) {
+  notificationReceived (notification) {
+    switch (notification) {
       case "MODULE_DOM_CREATED":
         this.sendSocketNotification("INIT", this.config);
         if (this.config.mirrorBackground) this.MMBackground();
@@ -44,6 +45,7 @@ Module.register("MMM-Glassy", {
   },
 
   getDom () {
+
     /* make a dummy hidden module for use `MODULE_DOM_CREATED` notification */
     var dom = document.createElement("div");
     dom.style.display = "none";
@@ -56,9 +58,10 @@ Module.register("MMM-Glassy", {
   },
 
   initialize () {
+
     /* set css from config*/
     const cssValues = {
-      "--Glassy-Padding" : this.config.modulePadding,
+      "--Glassy-Padding": this.config.modulePadding,
       "--Glassy-Radius": this.config.moduleRadius,
       "--Glassy-Background": `rgba(${this.config.moduleBackgroundRGB}, ${this.config.moduleBackgroundOpacity})`,
       "--Glassy-Blur": this.config.moduleBlur,
@@ -71,6 +74,7 @@ Module.register("MMM-Glassy", {
       "--gap-body-left": this.config.mirrorMargin
     };
     this.cssSet(cssValues);
+
     /* select Modules to Glassy apply */
     MM.getModules()
       .exceptModule(this)
