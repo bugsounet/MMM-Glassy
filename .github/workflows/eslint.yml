@@ -20,5 +20,5 @@ jobs:
         run: npm prune
 
       - name: Run ESLint
-        run: npx eslint *.js installer/*.js --config eslint.config.js
+        run: npm run test
         continue-on-error: false
