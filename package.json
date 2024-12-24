@@ -1,35 +1,36 @@
 {
   "name": "MMM-Glassy",
   "version": "1.1.1",
-  "rev": "241120",
   "description": "Glassy Effect for MagicMirror²",
-  "main": "MMM-Glassy.js",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/bugsounet/MMM-Glassy"
-  },
   "keywords": [
     "glassy",
     "magic mirror",
     "background"
   ],
-  "scripts": {
-    "preinstall": "installer/preinstall.sh",
-    "postinstall": "installer/postinstall.sh -m",
-    "update": "installer/update.sh",
-    "reset": "git reset --hard",
-    "clean": "rm -rf node_modules package-lock.json",
-    "lint": "eslint *.js installer/*.js --config eslint.config.js",
-    "lint:fix": "eslint *.js installer/*.js --config eslint.config.js --fix",
-    "test": "npm run lint",
-    "test:minify": "cd installer && node minify.js"
-  },
-  "author": "@bugsounet",
-  "license": "MIT",
+  "homepage": "https://github.com/bugsounet/MMM-Glassy",
   "bugs": {
     "url": "https://github.com/bugsounet/MMM-Glassy"
   },
-  "homepage": "https://github.com/bugsounet/MMM-Glassy",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bugsounet/MMM-Glassy"
+  },
+  "license": "MIT",
+  "author": "@bugsounet",
+  "main": "MMM-Glassy.js",
+  "scripts": {
+    "clean": "rm -rf node_modules package-lock.json",
+    "dev": "cd installer && node dev.js",
+    "dev:src": "cd installer && node src.js",
+    "lint": "eslint . --config eslint.config.mjs",
+    "lint:fix": "eslint . --config eslint.config.mjs --fix",
+    "postinstall": "installer/postinstall.sh -m",
+    "preinstall": "installer/preinstall.sh",
+    "reset": "rm -f *.js && git reset --hard",
+    "test": "npm run lint",
+    "test:minify": "cd installer && node minify.js",
+    "update": "installer/update.sh"
+  },
   "dependencies": {
     "esbuild": "^0.24.2",
     "glob": "^11.0.0"
@@ -37,6 +38,8 @@
   "devDependencies": {
     "@stylistic/eslint-plugin": "^2.12.1",
     "eslint": "^9.17.0",
-    "eslint-plugin-import": "^2.31.0"
-  }
+    "eslint-plugin-import": "^2.31.0",
+    "eslint-plugin-package-json": "^0.18.0"
+  },
+  "rev": "241214"
 }
