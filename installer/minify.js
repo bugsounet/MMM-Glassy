@@ -4,7 +4,7 @@
 */
 
 const path = require("node:path");
-const { globSync } = require("glob");
+const { fdir } = require("fdir");
 const esbuild = require("esbuild");
 
 var files = [];
@@ -19,8 +19,13 @@ let commentOut = "**/";
 /**
  * search all javascript files
  */
-function searchFiles () {
-  let components = globSync("../src/**/*.js");
+async function searchFiles () {
+  const components = await new fdir()
+    .withBasePath()
+    .filter((path) => path.endsWith(".js"))
+    .crawl("../src")
+    .withPromise();
+
   files = files.concat(components);
   console.log(`Found: ${files.length} files to install and minify\n`);
 }
@@ -29,7 +34,7 @@ function searchFiles () {
  * Minify all files in array with Promise
  */
 async function minifyFiles () {
-  searchFiles();
+  await searchFiles();
   await Promise.all(files.map((file) => { return minify(file); })).catch(() => process.exit(255));
 }
 
@@ -40,10 +45,10 @@ async function minifyFiles () {
  */
 function minify (file) {
   let FileName = file.replace("../src/", "../");
-  let GAFileName = `${project}/${FileName.replace("../", "")}`;
+  let MyFileName = `${project}/${FileName.replace("../", "")}`;
   let pathInResolve = path.resolve(__dirname, file);
   let pathOutResolve = path.resolve(__dirname, FileName);
-  console.log("Process File:", GAFileName);
+  console.log("Process File:", MyFileName);
   return new Promise((resolve, reject) => {
     try {
       esbuild.buildSync({
@@ -52,7 +57,7 @@ function minify (file) {
         minify: true,
         outfile: pathOutResolve,
         banner: {
-          js: `${commentIn} ${project}\n  * File: ${GAFileName}\n  * Version: ${version}\n  * Revision: ${revision}\n  * ⚠ This file must not be modified ⚠\n${commentOut}`
+          js: `${commentIn} ${project}\n  * File: ${MyFileName}\n  * Version: ${version}\n  * Revision: ${revision}\n  * ⚠ This file must not be modified ⚠\n${commentOut}`
         },
         footer: {
           js: `${commentIn} ❤ Coded With Heart by @bugsounet -- https://www.bugsounet.fr ${commentOut}`
